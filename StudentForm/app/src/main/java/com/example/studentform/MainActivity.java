@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
         if(name.getText().toString().isEmpty()){
             Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
         }
+        if(name.getText().toString().contains("!@#$%^&*()1234567890_+-=")){
+            Toast.makeText(this, "Cannot contain special character in name", Toast.LENGTH_SHORT).show();
+        }
+        if(number.getText().toString().isEmpty()){
+            Toast.makeText(this, "Number cannot be empty", Toast.LENGTH_SHORT).show();
+        }
+        if(date.getText().toString().isEmpty()){
+            Toast.makeText(this, "DOB cannot be empty", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
