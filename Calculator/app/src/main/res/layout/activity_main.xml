@@ -56,41 +56,52 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="369dp"
         android:orientation="horizontal"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/res">
 
+
         <Button
             android:id="@+id/addbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:onClick="add"
+            android:textSize="50px"
             android:text="+" />
+
 
         <Button
             android:id="@+id/subbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:onClick="sub"
+            android:textSize="50px"
             android:text="-" />
 
         <Button
             android:id="@+id/mulbtn"
             android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="mul"
+            android:textSize="50px"
             android:text="*" />
 
         <Button
             android:id="@+id/divbtn"
             android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="div"
+            android:textSize="50px"
             android:text="/" />
     </LinearLayout>
 

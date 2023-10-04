@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         n2 = Float.parseFloat(String.valueOf(numb2.getText()));
         result = n1+n2;
         ress.setText(Float.toString(result));
+        
     }
     public void sub(View view){
         n1 = Float.parseFloat(String.valueOf(numb1.getText()));
