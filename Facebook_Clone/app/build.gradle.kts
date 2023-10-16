@@ -1,14 +1,13 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.example.studentform"
+    namespace = "com.example.facebook_clone"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.studentform"
+        applicationId = "com.example.facebook_clone"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,20 +32,15 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 dependencies {
 
-    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation("androidx.appcompat:appcompat:+")
     implementation("com.google.android.material:material:1.5.0")
     implementation("androidx.constraintlayout:constraintlayout:+")
     implementation("androidx.navigation:navigation-fragment:+")
     implementation("androidx.navigation:navigation-ui:+")
-    implementation("androidx.navigation:navigation-fragment-ktx:+")
-    implementation("androidx.navigation:navigation-ui-ktx:+")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:+")
     androidTestImplementation("androidx.test.espresso:espresso-core:+")
