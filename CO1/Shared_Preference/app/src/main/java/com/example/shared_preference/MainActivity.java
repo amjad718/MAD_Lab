@@ -8,11 +8,12 @@ import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
     EditText name, number, DOB;
-    RadioButton male, female;
-    CheckBox English, Malayalam;
+    RadioGroup gender;
+    CheckBox english, malayalam;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +22,9 @@ public class MainActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.nameid);
         number = (EditText) findViewById(R.id.numberid);
         DOB = (EditText) findViewById(R.id.dobid);
-        male = (RadioButton) findViewById(R.id.radioButton3);
-        female = (RadioButton) findViewById((R.id.radioButton4));
-        English = (CheckBox) findViewById(R.id.checkBox);
-        Malayalam = (CheckBox) findViewById(R.id.checkBox2);
+        gender = (RadioGroup) findViewById(R.id.radioGroup);
+        english = (CheckBox) findViewById(R.id.checkBox);
+        malayalam = (CheckBox) findViewById(R.id.checkBox2);
     }
 
     @Override
@@ -35,27 +35,21 @@ public class MainActivity extends AppCompatActivity {
         myEdit.putString("name", name.getText().toString());
         myEdit.putString("number", number.getText().toString());
         myEdit.putString("DOB", DOB.getText().toString());
-        myEdit.putString("male",male.getText().toString());
-        myEdit.putString("female",male.getText().toString());
-        myEdit.putString("English",male.getText().toString());
-        myEdit.putString("Malayalam",male.getText().toString());
+        myEdit.putInt("gender", gender.getCheckedRadioButtonId());
+        myEdit.putBoolean("English", english.isChecked());
+        myEdit.putBoolean("malayalam", malayalam.isChecked());
         myEdit.apply();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
         SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        String s1 = sh.getString("name", "");
-        String s2 = sh.getString("number", "");
-        String s3 = sh.getString("DOB","");
-        String s4 = sh.getString("male","");
-        String s5 = sh.getString("female","");
-        String s6 = sh.getString("English","");
-        String s7 = sh.getString("Malayalam","");
-        name.setText(s1);
-        number.setText(s2);
-        DOB.setText(s3);
+        name.setText(sh.getString("name",""));
+        number.setText(sh.getString("number", ""));
+        DOB.setText(sh.getString("DOB", ""));
+        gender.check(sh.getInt("gender", -1));
+        english.setChecked(sh.getBoolean("English", false));
+        malayalam.setChecked(sh.getBoolean("malayalam", false));
     }
 }
